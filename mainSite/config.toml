@@ -1,0 +1,26 @@
+baseURL = "https://reflexiverecusion.xyz"
+title = "Reflexive Recursion"
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[author]
+  name = "Linus Meierhöfer"
+  abstract = "I'm a computer science student mainly interested in abstract mathematics. This blog is a collection of thoughts about infinite combinatorics, computability theory, philosophy and other stuff I am curious about."
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "paraiso-dark"
+
+[Params]
+  darkmode = true
