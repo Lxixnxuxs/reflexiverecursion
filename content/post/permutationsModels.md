@@ -28,6 +28,7 @@ For every family of sets \( \mathbb{F}=\{A, B, \dots\} \) with \(\emptyset \noti
 The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets $\mathbb{F}$. The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? What about the plethora of paradoxes emerging from this assumption? 
 These are exactly the questions we are going to tackle in this post. But lets start by explaining what I mean by choice paradoxes and have a look at an interesting paradox in classical logic: 
 
+{{</ math.inline >}}
 # Prisoners
 
 Consider the following problem: There are countably infinite many prisoners standing in a row, each of them only able to look in the direction of his infinitly many successors but not behind hist back. Every prisoner wears a hat which is colored either blue or red but no prisoner can observe his own hat color. They now play a game in which, starting from the first one, each prisoner has to guess his hat color. If he is wrong he dies. Before the prisoners receive their hats they can meet and discuss a strategy for the guessing game. After the game started, they aren't allowed to talk anymore. The question now is: Can the prisoners come up with a straegy such that independently of the hat colors only finitly many prisoners die?
@@ -117,5 +118,3 @@ When looking at this formally, this may not seem too much of a paradox. But cons
 Fair enough, I have to admit that we had to introduce a whole lot of formalism to describe these concepts. But just take a step back and observe what we have constructed here. To destroy our notion of choice we had to destroy the well-structure of our model itself. We created a permutation model that is able to see its own automorphism. This models then contained in some sense amourphous sets which are stable under specific permutations and thus are not distinguishabe from each other within the model. So its just not that easy to go around paradoxes. This is permutations model is a pretty chaotic and unstructured place. 
 
 In the next articles we are going to dive deeper into the philosophy of choice principles and its actual core principle: Transcendental Argumentation.
-
-{{</ math.inline >}}
