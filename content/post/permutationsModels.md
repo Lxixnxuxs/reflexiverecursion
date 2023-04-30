@@ -17,13 +17,13 @@ math: true
 
 
 # Choice on trial
-
+{{< math.inline >}}
 This is going to be the first in a series of articles about the choice principles. I was mainly motivated by asking myself the question why the axiom of choice gives rise to so many weird paradoxes and if there are similar paradoxes if we just discard it. Therefore we are going to dive deep into the question from where choice paradoxes arise. One the way we will prove that the axiom of choice is independent from ZF and gain an intution why this really works.
 
 I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons".
 
 But before discussing abstract connections and we should take a look on our intuition behind choice principles. The axiom of choice, further abbreviated with AC, is formulated as follows:
-For every family of sets {{< math.inline >}}<p>\( \mathbb{F}=\{A, B, \dots\} \)</p>{{</ math.inline >}} with $\emptyset \notin \mathbb{F}$ there exists a function $f: \mathbb{F} \rightarrow \Cup \mathbb{F}$ such that $\forall x \in \mathbb{F}$ we have $f(x) \in x$
+For every family of sets \( \mathbb{F}=\{A, B, \dots\} \) with \(\emptyset \notin \mathbb{F}\) there exists a function \(f: \mathbb{F} \rightarrow \Cup \mathbb{F}\) such that \(\forall x \in \mathbb{F}\) we have \(f(x) \in x\)
 
 The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets $\mathbb{F}$. The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? What about the plethora of paradoxes emerging from this assumption? 
 These are exactly the questions we are going to tackle in this post. But lets start by explaining what I mean by choice paradoxes and have a look at an interesting paradox in classical logic: 
@@ -117,3 +117,5 @@ When looking at this formally, this may not seem too much of a paradox. But cons
 Fair enough, I have to admit that we had to introduce a whole lot of formalism to describe these concepts. But just take a step back and observe what we have constructed here. To destroy our notion of choice we had to destroy the well-structure of our model itself. We created a permutation model that is able to see its own automorphism. This models then contained in some sense amourphous sets which are stable under specific permutations and thus are not distinguishabe from each other within the model. So its just not that easy to go around paradoxes. This is permutations model is a pretty chaotic and unstructured place. 
 
 In the next articles we are going to dive deeper into the philosophy of choice principles and its actual core principle: Transcendental Argumentation.
+
+{{</ math.inline >}}
