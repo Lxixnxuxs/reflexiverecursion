@@ -52,12 +52,12 @@ When speacking about Intuition in models of set theory, there is no way around G
 The $Definable(A)$ operator is here defined as the collection of all sets that are mathematically definable with subsets of $A$. 
 
 This cummulative hirarchy can also be visualized by the following diagram. We see the "V-structure" of the universe, as in every stage we re able to define more and more sets.
-![](img/c_hy_s.png)
+![](/c_hy_s.png)
 
 By this construction we can easily prove that the axiom of choice holds trivially, i.e. without any need for assuming it. Intutively speaking, the constructible universe is by defintion already structured enough that we can find a well-ordering on the whole universe. I.e there exists a well-ordering $<$ such that for all sets in the constructible universe, if $x \neq y$ then either $x < y$ or $y < x$. The intuition about the well-ordering is as follows:
 Obviously if $x$ and $y$ were constructed in different stages, i.e. $x \in L_{\alpha}$ and $y \in L_{\beta}$ with $\alpha \neq \beta$, then just take as minimal set the one constructed earlier, i.e. assuiming $\alpha < \beta$ in the ordinal-relation the $x < y$.
 So assume that $x$ and $y$ were constructed in the same stage. To be somewhat precise we introduce a little induction here. So let $x, y \in L{\alpha}$ and assume that all sets in previous stages $L_{\gamma}$ for all $\gamma < \alpha$ are already well-ordered. Now observe that all sets in $L{\alpha}$ have, by definition, an associated proof. We know that this proof concists of pure syntax and also parameters. Since the proof is finite, the syntax part can easily be well-ordered by some lexographic ordering on the symbols of the proof alphabet. And since the paremters are, also by defintion, only be allowed to come from precious stages, assuming the induction hypothesis, are already well ordered such that we can merge the syntax and parameter part into a well-ordering for the sets $x$ and $y$.
-This is visualized in the following diagram: ![](img/w_ord_gcu.png)
+This is visualized in the following diagram: ![](/w_ord_gcu.png)
 
 Since we now have a universe-wide well ordering, it is easy to construct a choice function for every set. Just always take the minimal element regarding $<$.
 
@@ -92,7 +92,7 @@ So how do our atoms actually look like? This is not relevant here. We could give
 So now that we have our atom-enriched theory ZFA we are ready to construct a model for it. You can view models of ZFA similarily to models of ZF just that we have more base cases than the empty set. I.e. we can construct a cummulative hirarchy just as in ZF, but starting with $A$ as the base case.
 Our cummulative hirarchy would then look as follows: 
 
-![](img/c_hy_a.png)
+![](/c_hy_a.png)
 
 As we already discussed, we want to introduce some notion of indestinguishability in our model. By observing the altered axioms closely, we see that they don't distinguish between the atoms. So a permutation $\lambda \in \mathbb{G}$ in the symmtery group $\mathbb{G}$ of the atoms $A$ results in an automorphism of the universe. No big deal here: Just permuting the atoms by a permutation function $\lambda$. If $\lambda (a)=b$ and $\lambda (b)=a$ then the set $x=\{a, b, \{a\}\}$ would turn into $\lambda x = \{b, a, \{b\}\}$
 
