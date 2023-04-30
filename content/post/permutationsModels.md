@@ -23,7 +23,7 @@ This is going to be the first in a series of articles about the choice principle
 I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons".
 
 But before discussing abstract connections and we should take a look on our intuition behind choice principles. The axiom of choice, further abbreviated with AC, is formulated as follows:
-For every family of sets {{< math.inline >}}\mathbb{F}=\{A, B, \dots\}{{</ math.inline >}} with $\emptyset \notin \mathbb{F}$ there exists a function $f: \mathbb{F} \rightarrow \Cup \mathbb{F}$ such that $\forall x \in \mathbb{F}$ we have $f(x) \in x$
+For every family of sets {{< math.inline >}}<p>\mathbb{F}=\{A, B, \dots\}</p>{{</ math.inline >}} with $\emptyset \notin \mathbb{F}$ there exists a function $f: \mathbb{F} \rightarrow \Cup \mathbb{F}$ such that $\forall x \in \mathbb{F}$ we have $f(x) \in x$
 
 The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets $\mathbb{F}$. The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? What about the plethora of paradoxes emerging from this assumption? 
 These are exactly the questions we are going to tackle in this post. But lets start by explaining what I mean by choice paradoxes and have a look at an interesting paradox in classical logic: 
