@@ -69,7 +69,7 @@ By this construction we can easily prove that the axiom of choice holds triviall
 The reason of this the well-ordering is as follows:
 Obviously if \(x\) and \(y\) were constructed in different stages, i.e. \(x \in L_{\alpha}\) and \(y \in L_{\beta}\) with \(\alpha \neq \beta\), then just take as minimal set the one constructed earlier, i.e. assuiming \(\alpha < \beta\) in the ordinal-relation follows \(x < y\).
 So assume that \(x\) and \(y\) were constructed in the same stage. To be somewhat precise we introduce a little induction here. So let \(x, y \in L{\alpha}\) and assume that all sets in previous stages \(L_{\gamma}\) for all \(\gamma < \alpha\) are already well-ordered. Now observe that all sets in \(L{\alpha}\) have, by definition, an associated proof. We know that this proof consists of pure logical syntax and other sets as generic parameters. Since the proof is finite, the syntax part can easily be well-ordered by some lexographic ordering on the symbols of the syntax alphabet. And since the paremters are, also by defintion, only be allowed to come from previous stages thus, assuming the induction hypothesis, are already well ordered, we can merge the syntax and parameter part into a well-ordering of the complete proof and therefore also for the sets \(x\) and \(y\).
-{</ math.inline >}
+{{</ math.inline >}}
 This is visualized in the following diagram: ![](/w_ord_gcu.png)
 
 Since we now have a universe-wide well ordering, it is easy to construct a representative function for every set. Just always take the minimal element regarding our well-ordering.
