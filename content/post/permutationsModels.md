@@ -22,33 +22,37 @@ The Axiom of Choice is one of the most intriguing concepts in set theory, and it
 I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons". But lets begin.<br>
 
 {{< math.inline >}}
-At its core, the Axiom of Choice, often abbreviated with AC, seems simple enough. It states that for every family of sets \( \mathbb{F}=\{A, B, \dots\} \) with \(\emptyset \notin \mathbb{F}\) there exists a function \(f: \mathbb{F} \rightarrow \Cup \mathbb{F}\) such that \(\forall x \in \mathbb{F}\) we have \(f(x) \in x\).
+At its core, the Axiom of Choice, often abbreviated with AC, seems simple enough. It states that for every family of sets \( \mathcal{F}=\{A, B, \dots\} \) with \(\emptyset \notin \mathcal{F}\) there exists a function \(f: \mathcal{F} \rightarrow \bigcup \mathcal{F}\) such that \(\forall x \in \mathcal{F} \ f(x) \in x\).
 {{</ math.inline >}}  
 <br>
 {{< math.inline >}}
-The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets \(\mathbb{F}\). The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? And what counterintuitive results might appear when assuming it? 
+The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets \(\mathcal{F}\). The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? And what counterintuitive results might appear when assuming it? 
 These are exactly the questions we are going to tackle in this post. But lets start by explaining what I mean by choice paradoxes and have a look at an interesting paradox in classical logic: 
 {{</ math.inline >}}
 
 # Prisoners
-{{< math.inline >}}
+
 Consider the following problem: There are countably infinite many prisoners standing in a row, each of them only able to look in the direction of his infinitly many successors but not behind his back (to his finitly many predecessors). Every prisoner wears a hat which is colored either blue or red. However no prisoner can observe his own hat color. The prisoners now play a game such that, starting from the first one, each prisoner has to guess his hat color. If his guess is incorrect, he dies. Before the prisoners receive their hats, they can meet and discuss a strategy for the guessing game. After the game started, they aren't allowed to talk anymore. The question now is: Can the prisoners come up with a strategy such that independently of the hat colors, only finitly many prisoners die?
-
+<br>
 Intuitively we would expect that such strategy is impossible. Every hat color is independent from all others such that a prisoner has no better prediction strategy as just randomly guessing. So about half of of them, thus at least infinitly many ones should die. 
-
+<br>
+{{< math.inline >}}
 Strangly, our intution fails us here. The answer to this problem is yes even though the deep reason behind this fact is far from obvious. The construction of the strategy goes as follows: The sequence of hat colors can be uniquely indentified by an infinite bit string (an infinite sequence of 0's and 1's). When a hat is red we substitute it with a 0 and when its blue we replace it with a 1. So we now have an infinite set of countably infinite bitstrings \(A=\{0, 1\}^\infty\) each identifying a particular game. We then construct a seemlingly complicated set (the complexity of this set is the key of the paradox here): We define an equivalence relation \(\thicksim\) on \(A\) such that \(x \thicksim y\)  for \(x, y \in A\) if and only if \(x\) and \(y\) only differ in finitly many positions, i.e. the hat colors in their respective games are almost the same but differ only in finitly many hats. Given this equivalence relation we can easily define the set of equivalence classes \(A\\\thicksim\). Now entering the key part: For each equivalence class in \(A\), assuming the axiom of choice, there exists a unique representative \(x\). So each equivalence class can be identified by its representative. 
 Think about what we have done here: We collapsed the whole space of games into "almost similar" ones. For each of these collapses we can find a representative identifying the similarity information. So all games in a similarity class can be somehow reduced to this representative.
-
-The strategy of the prisoners is to exactly construct this representative system we have outlined here. When the game starts, each prisoner can see only his inifinitly many successors, but his finitly many predecessors are hidden. But every prisoner knows exactly in which equivalence class the current game is: He has the inifinite amout of information to decide this (only finitly many information is hidden from him). So he also knows the unique representative of the current equivalence class. He thus guesses his hat color as if the current game was exaclty the one identified by the representative. By definition of our equivalence relation \(\thicksim\) the representative and the actual game only differs in finitly many places. Therefore at most finitly many prisoners guess their color wrong such that independently of the intial hat coloring this is a valid strategy.
-
-Think about this construction and its deeper reasons. Where exactly does the paradox arise?
-
-The point in which our intuition fails lies actually in the complexity of the set of equivalence classes \(A\\\thicksim\), constructed by the equivalence relation \(\thicksim\). No worries if you cant visualize it properly. This is a highly complicated set which we didn't define constructively but by means of an abstract notion. It is just not clear how this set actually looks like whithout assuming some kind of structure. This is exactly what AC does: The Axiom of Choice is an axiom about structure, about the structure of the set universe. It allows us to argue over highly complex, transcendental and nonconstructive sets even though we have no clue on how they actually look like. So we can summarize this by stating: Assuming structure in the presence of complicated sets also assumes structure of these complicated sets. This assumed structure then gives rise the an argumentation over the sets such that we observe paradoxes contradicting our intution. The paradox does not emerge from the choice but from the paradoxical properties of other structures we are only able to observe when assuming it. 
-
-We now could ask ourselfs: Why do we actually need such assumption anyway? And how do these sets without a choice function look like? What makes them so special? 
-
-To answer these questions we will proceed to discuss and examine a model where AC holds and one where it fails. 
 {{</ math.inline >}}
+<br>
+The strategy of the prisoners is to exactly construct this representative system we have outlined here. When the game starts, each prisoner can see only his inifinitly many successors, but his finitly many predecessors are hidden. But every prisoner knows exactly in which equivalence class the current game is: He has the inifinite amout of information to decide this (only finitly many information is hidden from him). So he also knows the unique representative of the current equivalence class. He thus guesses his hat color as if the current game was exaclty the one identified by the representative. By definition of our equivalence relation \(\thicksim\) the representative and the actual game only differs in finitly many places. Therefore at most finitly many prisoners guess their color wrong such that independently of the intial hat coloring this is a valid strategy.
+<br>
+Think about this construction and its deeper reasons. Where exactly does the paradox arise?
+<br>
+{{< math.inline >}}
+The point in which our intuition fails lies actually in the complexity of the set of equivalence classes \(A\\\thicksim\), constructed by the equivalence relation \(\thicksim\). No worries if you cant visualize it properly. This is a highly complicated set which we didn't define constructively but by means of an abstract notion. It is just not clear how this set actually looks like whithout assuming some kind of structure. This is exactly what AC does: The Axiom of Choice is an axiom about structure, about the structure of the set universe. It allows us to argue over highly complex, transcendental and nonconstructive sets even though we have no clue on how they actually look like. So we can summarize this by stating: Assuming structure in the presence of complicated sets also assumes structure of these complicated sets. This assumed structure then gives rise the an argumentation over the sets such that we observe paradoxes contradicting our intution. The paradox does not emerge from the choice but from the paradoxical properties of other structures we are only able to observe when assuming it. 
+{{</ math.inline >}}
+<br>
+We now could ask ourselfs: Why do we actually need such assumption anyway? And how do these sets without a choice function look like? What makes them so special? 
+<br>
+To answer these questions we will proceed to discuss and examine a model where AC holds and one where it fails. 
+
 
 # Choice in the Goedel Model
 {{< math.inline >}}
@@ -85,9 +89,9 @@ Having seen the construction in the previous paragraoh and knowing about the con
 There is also a famous intuition about choice principles formulated by Bertrand Russel himself. Paraphrased it goes like this:
 "Choosing from a set of shoes is easy. But not from a set of socks". What he means by this is that we can easily distinguish a left shoe from a right shoe. Their inherent property makes them differentiable: When observing a pair of shoes we just can choose the left or the right one.
 But in the socks case this argumentation somehow fails. Without making any assumptions about the shape, labeling or location of two socks, there is no way to distinguish them from each other. In this case choosing a representative is no more trivial. So Russell's intuition about choice principles highlights a fundamental concept in choice principles which we already had a glimpse at: the notion of distinguishability. It's easy to distinguish one shoe from another, but not so much for socks and exactly this lack of distinguishability is what makes choosing a representative from a collection of socks challenging.
-
+<br>
 But how should we translate this informal notion into set theoretic formalism? After all, the axioms of ZF require sets to be distinguished at least in the \(=\) sense, i.e. by axiom of extensionality each differentiable \(x \neq y\) contain different elements. 
-
+<br>
 The key insight here is a very generic one and absurdly deep one: We don't need sets to be distinguishable for us. We are some kind of meta-creatures, able to argue over models from a bird view. It sufficies that persons who completly "live" in the model, i.e. their perception only lies within the model borders, can't hold these sets apart. So what we want to do is to construct a model where its indestinguishable sets behave very similar in set theoretic sense.   
 More formally: Whenever we want \(x, y\) to be in some sense indestinguishable within the model, we cram some bijections mapping \(x\) to \(y\) into it, making \(x\) seem to behave exactly like \(y\) up to this isomorphism.
 
