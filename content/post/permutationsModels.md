@@ -32,25 +32,28 @@ These are exactly the questions we are going to tackle in this post. But lets st
 
 # Prisoners
 
-Consider the following problem: There are countably infinite many prisoners standing in a row, each of them only able to look in the direction of his infinitly many successors but not behind his back (to his finitly many predecessors). Every prisoner wears a hat which is colored either blue or red. However no prisoner can observe his own hat color. The prisoners now play a game such that, starting from the first one, each prisoner has to guess his hat color. If his guess is incorrect, he dies. Before the prisoners receive their hats, they can meet and discuss a strategy for the guessing game. After the game started, they aren't allowed to talk anymore. The question now is: Can the prisoners come up with a strategy such that independently of the hat colors, only finitly many prisoners die?
-<br>
-Intuitively we would expect that such strategy is impossible. Every hat color is independent from all others such that a prisoner has no better prediction strategy as just randomly guessing. So about half of of them, thus at least infinitly many ones should die. 
-<br>
+Consider the following problem: There are countably infinite many prisoners standing in a row, each of them only able to look in the direction of his infinitly many successors but not behind his back (to his finitly many predecessors). Every prisoner wears a hat which is colored either blue or red. However no prisoner can observe his own hat color. The prisoners now play a game such that, starting from the first one, each prisoner has to guess his hat color. If his guess is incorrect, he dies. Before the prisoners receive their hats, they can meet and discuss a strategy for the guessing game. After the game started, they aren't allowed to talk anymore. The question now is: Can the prisoners come up with a strategy such that independently of the hat colors, only finitly many prisoners die?  
+
+Intuitively we would expect that such strategy is impossible. Every hat color is independent from all others such that a prisoner has no better prediction strategy as just randomly guessing. So about half of of them, thus at least infinitly many ones should die. <br> 
+
 {{< math.inline >}}
 Strangly, our intution fails us here. The answer to this problem is yes even though the deep reason behind this fact is far from obvious. The construction of the strategy goes as follows: The sequence of hat colors can be uniquely indentified by an infinite bit string (an infinite sequence of 0's and 1's). When a hat is red we substitute it with a 0 and when its blue we replace it with a 1. So we now have an infinite set of countably infinite bitstrings \(A=\{0, 1\}^\infty\) each identifying a particular game. We then construct a seemlingly complicated set (the complexity of this set is the key of the paradox here): We define an equivalence relation \(\thicksim\) on \(A\) such that \(x \thicksim y\)  for \(x, y \in A\) if and only if \(x\) and \(y\) only differ in finitly many positions, i.e. the hat colors in their respective games are almost the same but differ only in finitly many hats. Given this equivalence relation we can easily define the set of equivalence classes \(A\\\thicksim\). Now entering the key part: For each equivalence class in \(A\), assuming the axiom of choice, there exists a unique representative \(x\). So each equivalence class can be identified by its representative. 
 Think about what we have done here: We collapsed the whole space of games into "almost similar" ones. For each of these collapses we can find a representative identifying the similarity information. So all games in a similarity class can be somehow reduced to this representative.
 {{</ math.inline >}}
 <br>
-The strategy of the prisoners is to exactly construct this representative system we have outlined here. When the game starts, each prisoner can see only his inifinitly many successors, but his finitly many predecessors are hidden. But every prisoner knows exactly in which equivalence class the current game is: He has the inifinite amout of information to decide this (only finitly many information is hidden from him). So he also knows the unique representative of the current equivalence class. He thus guesses his hat color as if the current game was exaclty the one identified by the representative. By definition of our equivalence relation \(\thicksim\) the representative and the actual game only differs in finitly many places. Therefore at most finitly many prisoners guess their color wrong such that independently of the intial hat coloring this is a valid strategy.
-<br>
-Think about this construction and its deeper reasons. Where exactly does the paradox arise?
-<br>
+
+The strategy of the prisoners is to exactly construct this representative system we have outlined here. When the game starts, each prisoner can see only his inifinitly many successors, but his finitly many predecessors are hidden. But every prisoner knows exactly in which equivalence class the current game is: He has the inifinite amout of information to decide this (only finitly many information is hidden from him). So he also knows the unique representative of the current equivalence class. He thus guesses his hat color as if the current game was exaclty the one identified by the representative. By definition of our equivalence relation \(\thicksim\) the representative and the actual game only differs in finitly many places. Therefore at most finitly many prisoners guess their color wrong such that independently of the intial hat coloring this is a valid strategy. <br>
+
+Think about this construction and its deeper reasons. Where exactly does the paradox arise? <br>
+
 {{< math.inline >}}
 The point in which our intuition fails lies actually in the complexity of the set of equivalence classes \(A\\\thicksim\), constructed by the equivalence relation \(\thicksim\). No worries if you cant visualize it properly. This is a highly complicated set which we didn't define constructively but by means of an abstract notion. It is just not clear how this set actually looks like whithout assuming some kind of structure. This is exactly what AC does: The Axiom of Choice is an axiom about structure, about the structure of the set universe. It allows us to argue over highly complex, transcendental and nonconstructive sets even though we have no clue on how they actually look like. So we can summarize this by stating: Assuming structure in the presence of complicated sets also assumes structure of these complicated sets. This assumed structure then gives rise the an argumentation over the sets such that we observe paradoxes contradicting our intution. The paradox does not emerge from the choice but from the paradoxical properties of other structures we are only able to observe when assuming it. 
 {{</ math.inline >}}
+
 <br>
-We now could ask ourselfs: Why do we actually need such assumption anyway? And how do these sets without a choice function look like? What makes them so special? 
-<br>
+
+We now could ask ourselfs: Why do we actually need such assumption anyway? And how do these sets without a choice function look like? What makes them so special? <br> 
+
 To answer these questions we will proceed to discuss and examine a model where AC holds and one where it fails. 
 
 
