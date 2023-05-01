@@ -37,7 +37,7 @@ Consider the following problem: There are countably infinite many prisoners stan
 Intuitively we would expect that such strategy is impossible. Every hat color is independent from all others such that a prisoner has no better prediction strategy as just randomly guessing. So about half of of them, thus at least infinitly many ones should die. <br> 
 
 {{< math.inline >}}
-Strangly, our intution fails us here. The answer to this problem is yes even though the deep reason behind this fact is far from obvious. The construction of the strategy goes as follows: The sequence of hat colors can be uniquely indentified by an infinite bit string (an infinite sequence of 0's and 1's). When a hat is red we substitute it with a 0 and when its blue we replace it with a 1. So we now have an infinite set of countably infinite bitstrings \(A=\{0, 1\}^\infty\) each identifying a particular game. We then construct a seemlingly complicated set (the complexity of this set is the key of the paradox here): We define an equivalence relation \(\thicksim\) on \(A\) such that \(x \thicksim y\)  for \(x, y \in A\) if and only if \(x\) and \(y\) only differ in finitly many positions, i.e. the hat colors in their respective games are almost the same but differ only in finitly many hats. Given this equivalence relation we can easily define the set of equivalence classes \(A\\\thicksim\). Now entering the key part: For each equivalence class in \(A\), assuming the axiom of choice, there exists a unique representative \(x\). So each equivalence class can be identified by its representative. 
+Strangly, our intution fails us here. The answer to this problem is yes even though the deep reason behind this fact is far from obvious. The construction of the strategy goes as follows: The sequence of hat colors can be uniquely indentified by an infinite bit string (an infinite sequence of 0's and 1's). When a hat is red we substitute it with a 0 and when its blue we replace it with a 1. So we now have an infinite set of countably infinite bitstrings \(A=\{0, 1\}^\infty\) each identifying a particular game. We then construct a seemlingly complicated set (the complexity of this set is the key of the paradox here): We define an equivalence relation \(\thicksim\) on \(A\) such that \(x \thicksim y\)  for \(x, y \in A\) if and only if \(x\) and \(y\) only differ in finitly many positions, i.e. the hat colors in their respective games are almost the same but differ only in finitly many hats. Given this equivalence relation we can easily define the set of equivalence classes \(A\textbackslash\thicksim\). Now entering the key part: For each equivalence class in \(A\), assuming the axiom of choice, there exists a unique representative \(x\). So each equivalence class can be identified by its representative. 
 Think about what we have done here: We collapsed the whole space of games into "almost similar" ones. For each of these collapses we can find a representative identifying the similarity information. So all games in a similarity class can be somehow reduced to this representative.
 {{</ math.inline >}}
 <br>
@@ -47,7 +47,7 @@ The strategy of the prisoners is to exactly construct this representative system
 Think about this construction and its deeper reasons. Where exactly does the paradox arise? <br>
 
 {{< math.inline >}}
-The point in which our intuition fails lies actually in the complexity of the set of equivalence classes \(A\\\thicksim\), constructed by the equivalence relation \(\thicksim\). No worries if you cant visualize it properly. This is a highly complicated set which we didn't define constructively but by means of an abstract notion. It is just not clear how this set actually looks like whithout assuming some kind of structure. This is exactly what AC does: The Axiom of Choice is an axiom about structure, about the structure of the set universe. It allows us to argue over highly complex, transcendental and nonconstructive sets even though we have no clue on how they actually look like. So we can summarize this by stating: Assuming structure in the presence of complicated sets also assumes structure of these complicated sets. This assumed structure then gives rise the an argumentation over the sets such that we observe paradoxes contradicting our intution. The paradox does not emerge from the choice but from the paradoxical properties of other structures we are only able to observe when assuming it. 
+The point in which our intuition fails lies actually in the complexity of the set of equivalence classes \(A\textbackslash\thicksim\), constructed by the equivalence relation \(\thicksim\). No worries if you cant visualize it properly. This is a highly complicated set which we didn't define constructively but by means of an abstract notion. It is just not clear how this set actually looks like whithout assuming some kind of structure. This is exactly what AC does: The Axiom of Choice is an axiom about structure, about the structure of the set universe. It allows us to argue over highly complex, transcendental and nonconstructive sets even though we have no clue on how they actually look like. So we can summarize this by stating: Assuming structure in the presence of complicated sets also assumes structure of these complicated sets. This assumed structure then gives rise the an argumentation over the sets such that we observe paradoxes contradicting our intution. The paradox does not emerge from the choice but from the paradoxical properties of other structures we are only able to observe when assuming it. 
 {{</ math.inline >}}
 
 <br>
@@ -58,21 +58,24 @@ To answer these questions we will proceed to discuss and examine a model where A
 
 
 # Choice in the Goedel Model
+When speacking about Intuition in models of set theory, there is no way around Goedels Constructible Universe. Eventhough being a supporter of the multiverse theory of models, in my view the constructible universe is  sense "mosthe in somet rational" one, as it only contains sets that are actually mathematically definable. The construction of this model is pretty straightforward: We just can build it up in a cummulative hirarchy, as we have done it for the model V. That is, we define a base case and by an inductive defintiion build more and more sets. The formal process goes like this:<br>
+
+
+1. Start with the empty set as base case {{< math.inline >}} \(L_0 = \emptyset\) {{</ math.inline >}}
+2. For each non-limit ordinal {{< math.inline >}} \(\alpha\) define \(L_{\alpha + 1}=Definable(L_{\alpha})\) {{</ math.inline >}}
+3. For each limit ordinal {{< math.inline >}} \(\lambda\) let \(L_{\lambda}=\Cup_{\alpha < \lambda} L_{\alpha}\) {{</ math.inline >}}
+
+
 {{< math.inline >}}
-When speacking about Intuition in models of set theory, there is no way around Goedels Constructible Universe, also denoted by the letter \(L\). Eventhough being a supporter of the multiverse theory of models, in my view the constructible universe is  sense "mosthe in somet rational" one, as it only contains sets that are actually mathematically definable. The construction of this model is pretty straightforward: We just can build it up in a cummulative hirarchy, as we have done it for the model V. That is, we define a base case and by an inductive defintiion build more and more sets. The formal process goes like this:
-
-1. Start with the empty set as base case \(L_0 = \emptyset\)
-2. For each non-limit ordinal \(\alpha\) define \(L_{\alpha + 1}=Definable(L_{\alpha})\)
-3. For each limit ordinal \(\lambda\) let \(L_{\lambda}=\Cup_{\alpha < \lambda} L_{\alpha}\)
-
 The\(Definable(A)\) operator is here defined as the collection of all sets that are mathematically definable with subsets of \(A\). If you are interested in the details just look it up in some Textbook. Here we are only interested in its abstraction. 
-{{</ math.inline >}}
+{{</ math.inline >}} <br>
 
 Visually we can view the "V-structure" of the universe, as in every stage we are able to define more sets.
-![](/c_hy_s.png)
+![](/c_hy_s.png) <br>
 
 {{< math.inline >}}
-By this construction we can easily prove that the axiom of choice holds trivially, i.e. without any need for assuming it. Intuitively speaking, the constructible universe is, by construction, already structured enough that we can find a well-ordering on the whole universe. I.e there exists a well-ordering \(<\) such that for all sets in the constructible universe, if \(x \neq y\) then either \(x < y\) or \(y < x\) and every collection of sets in \(L\) has a \(<\)-minimal set.
+By this construction we can easily prove that the axiom of choice holds trivially, i.e. without any need for assuming it. Intuitively speaking, the constructible universe is, by construction, already structured enough that we can find a well-ordering on the whole universe. I.e there exists a well-ordering \(<\) such that for all sets in the constructible universe, if \(x \neq y\) then either \(x < y\) or \(y < x\) and every collection of sets in \(L\) has a \(<\)-minimal set. <br>
+
 
 The reason of this the well-ordering is as follows:
 Obviously if \(x\) and \(y\) were constructed in different stages, i.e. \(x \in L_{\alpha}\) and \(y \in L_{\beta}\) with \(\alpha \neq \beta\), then just take as minimal set the one constructed earlier, i.e. assuiming \(\alpha < \beta\) in the ordinal-relation follows \(x < y\).
