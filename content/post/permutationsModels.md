@@ -17,13 +17,13 @@ math: true
 
 
 # Choice on trial
-The Axiom of Choice is one of the most intriguing concepts in set theory, and it has been the subject of much debate since its introduction by Ernst Zermelo in 1904. However this axiom, actually reflecting only a small part of possible choice principles, has led to some fascinating and sometimes counterintuitive results. In this blog post, we will explore some of the paradoxes that arise from the Axiom of Choice, as well as the deeper reasons behind them. We will then examine the proof that the axiom is independent from the Zermelo-Fraenkel set theory and explore the deep intuition behind it.
+The Axiom of Choice is one of the most intriguing concepts in set theory, and it has been the subject of much debate since its introduction by Ernst Zermelo in 1904. However this axiom, actually reflecting only a small part of possible choice principles, has led to some fascinating and sometimes counterintuitive results. In this blog post, we will explore some of the paradoxes that arise from the Axiom of Choice, as well as the deeper reasons behind them. We will then examine the proof that the axiom is independent from the Zermelo-Fraenkel set theory and explore the deep intuition behind it.  
 
-I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons". But lets begin.
+I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons". But lets begin.  
 
 {{< math.inline >}}
 At its core, the Axiom of Choice, often abbreviated with AC, seems simple enough. It states that for every family of sets \( \mathbb{F}=\{A, B, \dots\} \) with \(\emptyset \notin \mathbb{F}\) there exists a function \(f: \mathbb{F} \rightarrow \Cup \mathbb{F}\) such that \(\forall x \in \mathbb{F}\) we have \(f(x) \in x\).
-{{</ math.inline >}}
+{{</ math.inline >}}  
 
 {{< math.inline >}}
 The function guaranteed by this axiom thus can be viewed as generating a set of representatives, one for each member in the family of sets \(\mathbb{F}\). The first thing one might come to mind is why this is actually an axiom as its statement seems sort of trivial. Why shouldn't a family of sets have a choice function? Is it really natural to assume that every set has a choice function? And what counterintuitive results might appear when assuming it? 
