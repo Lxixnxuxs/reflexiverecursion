@@ -20,6 +20,7 @@ math: true
 {{< math.inline >}}
 The Axiom of Choice is one of the most intriguing concepts in set theory, and it has been the subject of much debate since its introduction by Ernst Zermelo in 1904. However this axiom, actually reflecting only a small part of possible choice principles, has led to some fascinating and sometimes counterintuitive results. In this blog post, we will explore some of the paradoxes that arise from the Axiom of Choice, as well as the deeper reasons behind them. We will then examine the proof that the axiom is independent from the Zermelo-Fraenkel set theory and explore the deep intuition behind it.
 
+
 I try to be as informal as possible here by just delivering the abstract intuitive idea, following the principle my professor once stated: "It matters only about the proof idea. The actual proof then can be carried out in a few afternoons". But lets begin.
 
 At its core, the Axiom of Choice, often abbreviated with AC, seems simple enough. It states that for every family of sets \( \mathbb{F}=\{A, B, \dots\} \) with \(\emptyset \notin \mathbb{F}\) there exists a function \(f: \mathbb{F} \rightarrow \Cup \mathbb{F}\) such that \(\forall x \in \mathbb{F}\) we have \(f(x) \in x\).
@@ -71,14 +72,11 @@ So assume that \(x\) and \(y\) were constructed in the same stage. To be somewha
 {</ math.inline >}
 This is visualized in the following diagram: ![](/w_ord_gcu.png)
 
-{{< math.inline >}}
-Since we now have a universe-wide well ordering, it is easy to construct a representative function for every set. Just always take the minimal element regarding \(<\).
+Since we now have a universe-wide well ordering, it is easy to construct a representative function for every set. Just always take the minimal element regarding our well-ordering.
 
 But what happened here on an abstract level? As we have seen, the constructible universe already has in some sense so much structure that we don't have to assume any additional one. Every pair of sets can be distinguished from each other since every set has an abstract meta-concept, a construction proof associated to it. So we again see the connection between structure and choice.
 
 Now that we understood a model in which AC holds trivially, let us have a look at a more complicated model where AC fails.
-
-{{</ math.inline >}}
 
 # Models of ZF in which AC fails
 {{< math.inline >}}
