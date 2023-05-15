@@ -67,20 +67,23 @@ When speacking about Intuition in models of set theory, there is no way around G
 
 
 {{< math.inline >}}
-The\(Definable(A)\) operator is here defined as the collection of all sets that are mathematically definable with subsets of \(A\). If you are interested in the details just look it up in some Textbook. Here we are only interested in its abstraction. 
+The \(Definable(A)\) operator is here defined as the collection of all sets that are mathematically definable with subsets of \(A\). If you are interested in the details just look it up in some Textbook. Here we are only interested in its abstraction. 
 {{</ math.inline >}} <br>
 
 Visually we can view the "V-structure" of the universe, as in every stage we are able to define more sets.
 ![](/c_hy_s.png) <br>
 
 {{< math.inline >}}
-By this construction we can easily prove that the axiom of choice holds trivially, i.e. without any need for assuming it. Intuitively speaking, the constructible universe is, by construction, already structured enough that we can find a well-ordering on the whole universe. I.e there exists a well-ordering \(<\) such that for all sets in the constructible universe, if \(x \neq y\) then either \(x < y\) or \(y < x\) and every collection of sets in \(L\) has a \(<\)-minimal set. <br>
+By this construction we can easily prove that the axiom of choice holds trivially, i.e. without any need for assuming it. Intuitively speaking, the constructible universe is, by construction, already structured enough that we can find a well-ordering on the whole universe. I.e there exists a well-ordering \(<\) such that for all sets in the constructible universe, if \(x \neq y\) then either \(x < y\) or \(y < x\) and every collection of sets in \(L\) has a \(<\)-minimal set.{{</ math.inline >}} <br>
 
 
+{{< math.inline >}}
 The reason of this the well-ordering is as follows:
 Obviously if \(x\) and \(y\) were constructed in different stages, i.e. \(x \in L_{\alpha}\) and \(y \in L_{\beta}\) with \(\alpha \neq \beta\), then just take as minimal set the one constructed earlier, i.e. assuiming \(\alpha < \beta\) in the ordinal-relation follows \(x < y\).
 So assume that \(x\) and \(y\) were constructed in the same stage. To be somewhat precise we introduce a little induction here. So let \(x, y \in L{\alpha}\) and assume that all sets in previous stages \(L_{\gamma}\) for all \(\gamma < \alpha\) are already well-ordered. Now observe that all sets in \(L{\alpha}\) have, by definition, an associated proof. We know that this proof consists of pure logical syntax and other sets as generic parameters. Since the proof is finite, the syntax part can easily be well-ordered by some lexographic ordering on the symbols of the syntax alphabet. And since the paremters are, also by defintion, only be allowed to come from previous stages thus, assuming the induction hypothesis, are already well ordered, we can merge the syntax and parameter part into a well-ordering of the complete proof and therefore also for the sets \(x\) and \(y\).
-{{</ math.inline >}}
+{{</ math.inline >}} <br>
+
+
 This is visualized in the following diagram: ![](/w_ord_gcu.png)
 
 Since we now have a universe-wide well ordering, it is easy to construct a representative function for every set. Just always take the minimal element regarding our well-ordering.
@@ -141,14 +144,17 @@ So thats our permutation model: We introduced atoms, defined a notion of symmetr
 So again: What have we actually constructed here? 
 
 {{</ math.inline >}}
-# The second Frankel Model
+# The second Fraenkel Model
 {{< math.inline >}}
 
 We now finally turn to the main part of this article. Showing how choice fails in our permutation model. For this lets start out with the following atoms: $$A=\{a_0, b_0, a_1, b_1, \dots\} = \{a_i| i \in \omega\} \cup \{b_i| i \in \omega\}$$. 
 Then construct the permutation model out of these base case atoms as outlined in the previous paragraph. We now have a model that only contains sets of the cummulative hirarchy that are symmetric up to finitly many fixes.
 We now claim: The set 
 $$S = \{\{a_0, b_0\}, \{a_1, b_1\}, \dots\} = \{\{a_i, b_i\} | i \in \omega\}$$
-has no choice function. Having understood the construction of our model this is a trivial fact. A choice function on \(S\) would for example look like
+has no choice function. 
+First we have to make sure that the set \(S\) itself is actually in our filtered model. We have to show that \(S\) has finite support.
+
+Having understood the construction of our model this is a trivial fact. A choice function on \(S\) would for example look like
 $$\{\{\{a_0, b_0\}, a_0\}, \{\{a_1, b_1\}, a_1\}, \dots\}$$
 but we see that to make, for example \(\{\{a_0, b_0\}, a_0\}\) symmetric we have to fix \(a_0\). Generalizing this, each atom choosen by the choice function would need to be fixed in order for the choice function itself to be symmetric. But because of our construction of \(S\) this must be done infinitly many often such that any choice function on \(S\) does not have finite support. Thus \(S\) has no choice function in this permutation model.
 This might not seem really mindblowing at first. But consider the implications of this: 
